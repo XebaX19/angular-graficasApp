@@ -1,0 +1,14 @@
+<h1>Redes sociales más usadas</h1>
+<hr>
+
+<div *ngIf="!existeData; else divGrafica" 
+     class="alert alert-info">
+    Cargando información...
+</div>
+
+<ng-template #divGrafica>
+    <app-grafica-torta [doughnutChartLabels]="doughnutChartLabels"
+                       [doughnutChartData]="doughnutChartData">
+    </app-grafica-torta>
+    <span class="float-end text-primary">Información en billones de usuarios</span>
+</ng-template>
